@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CustomControls %282%29">
+      <HintPath>E:\xampp\htdocs\mistervundmax\Hilfsmittel\CustomControls (2).dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,14 +49,35 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="daten.cs" />
+    <Compile Include="DBconnection.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="maininterface.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="maininterface.Designer.cs">
+      <DependentUpon>maininterface.cs</DependentUpon>
+    </Compile>
+    <Compile Include="newacc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="newacc.Designer.cs">
+      <DependentUpon>newacc.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="verschluesslung.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="newacc.resx">
+      <DependentUpon>newacc.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

@@ -12,16 +12,22 @@ namespace Bank
 {
     public partial class Form1 : Form
     {
+        DBconnection DB;
         public Form1()
         {
             InitializeComponent();
+            DB = new DBconnection();
         }
 
         private void rjButton1_Click(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(rjTextBox1.Texts) && !String.IsNullOrEmpty(rjTextBox2.Texts))
             {
-
+                if(DB.login(rjTextBox1.Texts, DB.decrypt(rjTextBox2.Texts)))
+                {
+                    maininterface m = new maininterface(DB.dateneinfügen(rjTextBox1.Texts, DB.decrypt(rjTextBox2.Texts)));
+                }
+                
             }
         }
 
