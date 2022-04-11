@@ -22,7 +22,7 @@ namespace Bank
             if (!String.IsNullOrEmpty(Namen.Texts) && !String.IsNullOrEmpty(pin1.Texts) && !String.IsNullOrEmpty(pin2.Texts) && pin1.Texts == pin2.Texts)
             {
                 DBconnection db = new DBconnection();
-                db.createacc(Namen.Texts,pin1.Texts);
+                daten d = db.createacc(Namen.Texts,pin1.Texts);
             }
         }
 

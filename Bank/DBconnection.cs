@@ -42,14 +42,13 @@ namespace Bank
             return login;
         }
 
-        public void createacc(string name, string pin)
+        public daten createacc(string name, string pin)
         {
             string iban;
-            Random ran = new Random();
-            ran.Next(1000, 9999);
-            iban = "ECU" + ran.Next(1000, 9999).ToString();
+            iban = "ECU" + Convert.ToByte(name).ToString() + Convert.ToByte(pin).ToString(); // i know its not safe but this is just a test to see if it works good like this
             cmd.CommandText = "Insert into Accounts(Namen,Pin,Erstelldatum,Total,IBAN) values("+name+","+pin+","+DateTime.Now.Date.ToString()+","+0.ToString()+","+iban+");";
             cmd.ExecuteNonQuery();
+            return dateneinfügen(name, pin);
         }
 
 
