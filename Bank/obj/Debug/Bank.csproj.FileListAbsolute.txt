@@ -1,0 +1,13 @@
+C:\Users\Vincent\Documents\Bank-ATM-Payroll-managmentsystem\Bank\bin\Debug\Bank.exe.config
+C:\Users\Vincent\Documents\Bank-ATM-Payroll-managmentsystem\Bank\bin\Debug\Bank.exe
+C:\Users\Vincent\Documents\Bank-ATM-Payroll-managmentsystem\Bank\bin\Debug\Bank.pdb
+C:\Users\Vincent\Documents\Bank-ATM-Payroll-managmentsystem\Bank\obj\Debug\Bank.csprojAssemblyReference.cache
+C:\Users\Vincent\Documents\Bank-ATM-Payroll-managmentsystem\Bank\obj\Debug\Bank.Form1.resources
+C:\Users\Vincent\Documents\Bank-ATM-Payroll-managmentsystem\Bank\obj\Debug\Bank.newacc.resources
+C:\Users\Vincent\Documents\Bank-ATM-Payroll-managmentsystem\Bank\obj\Debug\Bank.Properties.Resources.resources
+C:\Users\Vincent\Documents\Bank-ATM-Payroll-managmentsystem\Bank\obj\Debug\Bank.csproj.GenerateResource.cache
+C:\Users\Vincent\Documents\Bank-ATM-Payroll-managmentsystem\Bank\obj\Debug\Bank.csproj.CoreCompileInputs.cache
+C:\Users\Vincent\Documents\Bank-ATM-Payroll-managmentsystem\Bank\obj\Debug\Bank.csproj.CopyComplete
+C:\Users\Vincent\Documents\Bank-ATM-Payroll-managmentsystem\Bank\obj\Debug\Bank.exe
+C:\Users\Vincent\Documents\Bank-ATM-Payroll-managmentsystem\Bank\obj\Debug\Bank.pdb
+C:\Users\Vincent\Documents\Bank-ATM-Payroll-managmentsystem\Bank\obj\Debug\Bank.maininterface.resources

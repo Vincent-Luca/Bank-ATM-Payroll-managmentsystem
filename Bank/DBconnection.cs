@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Bank
 {
-    class DBconnection : verschluesslung
+    public class DBconnection : verschluesslung
     {
         string DBpath;
         OleDbConnection con;
@@ -17,6 +17,7 @@ namespace Bank
         {
             string dir = Environment.CurrentDirectory;
             DBpath = Directory.GetParent(dir).Parent.Parent.FullName;
+            cmd = new OleDbCommand();
         }
 
         public void connection()
@@ -28,12 +29,12 @@ namespace Bank
 
         public bool login(string name, string pin)
         {
-            cmd.CommandText = "Select * from Accounts Where Namen = '"+name+"' and Pin = '"+pin+"';";
+            cmd.CommandText = "Select * from Accounts Where Namen = '" + name + "' and Pin = '" + pin + "';";
             bool login = false;
             OleDbDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                if (reader.GetString(1) == name && reader.GetString(2) == pin)
+                if (reader.GetValue(1).ToString() == name && reader.GetValue(reader.GetOrdinal("Pin")).ToString() == pin)
                 {
                     login = true;
                 }
@@ -45,8 +46,8 @@ namespace Bank
         public daten createacc(string name, string pin)
         {
             string iban;
-            iban = "ECU" + Convert.ToByte(name).ToString() + Convert.ToByte(pin).ToString(); // i know its not safe but this is just a test to see if it works good like this
-            cmd.CommandText = "Insert into Accounts(Namen,Pin,Erstelldatum,Total,IBAN) values("+name+","+pin+","+DateTime.Now.Date.ToString()+","+0.ToString()+","+iban+");";
+            iban = "ECU" + encrypt(name) + encrypt(pin); // i know its not safe but this is just a test to see if it works good like this
+            cmd.CommandText = "Insert into Accounts(Namen,Pin,Erstelldatum,Total,IBAN) Values ('" + name + "','" + encrypt(pin) + "','" + DateTime.Now.Date.ToString() + "'," + 0.ToString() + ",'" + iban + "');";
             cmd.ExecuteNonQuery();
             return dateneinfügen(name, pin);
         }
@@ -59,18 +60,65 @@ namespace Bank
             OleDbDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {
-                if (reader.GetString(1) == name && reader.GetString(2) == pin)
+                if (reader.GetValue(1).ToString() == name && reader.GetValue(reader.GetOrdinal("Pin")).ToString() == pin)
                 {
                     d.ID = reader.GetInt32(0);
                     d.name = name;
-                    d.pin = pin;
-                    d.date = reader.GetDateTime(3);
-                    d.total = reader.GetInt32(4);
+                    d.pin = decrypt(pin);
+                    d.date = reader.GetString(3);
+                    d.total = Convert.ToInt32(reader.GetOrdinal("Total"));
                     d.IBAN = reader.GetString(5);
                 }
             }
             reader.Close();
             return d;
+        }
+        public void closecon()
+        {
+            con.Close();
+            con.Dispose();
+            cmd.Dispose();
+        }
+
+        public string[,] selectquery(List<string> colums, string table)
+        {
+            string[,] result = new string[colums.Count, getrows()];
+
+
+
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+            for (int i = 0; i < colums.Count; i++)
+            {
+                result[i, 0] = colums[i];
+            }
+            string query = "select "+colums[1];
+            for (int i = 1; i < colums.Count; i++)
+            {
+                query = query + "," + colums[i];
+            }
+            query += "from "+table;
+            cmd.CommandText = query;
+            
+            
+            while (reader.Read())
+            {
+                
+            }
+            reader.Close();
+            return result;
+        }
+
+        private int getrows()
+        {
+            int thing = 0;
+            OleDbDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                thing++;
+            }
+            reader.Close();
+            return thing+1;
         }
     }
 }

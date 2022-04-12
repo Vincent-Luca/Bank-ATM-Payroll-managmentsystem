@@ -29,94 +29,15 @@ namespace Bank
         /// </summary>
         private void InitializeComponent()
         {
-            this.rjButton1 = new CustomControls.RJControls.RJButton();
-            this.rjTextBox1 = new CustomControls.RJControls.RJTextBox();
-            this.rjRadioButton1 = new CustomControls.RJControls.RJRadioButton();
-            this.rjTextBox2 = new CustomControls.RJControls.RJTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.rjButton2 = new CustomControls.RJControls.RJButton();
-            this.rjRadioButton2 = new CustomControls.RJControls.RJRadioButton();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
-            // 
-            // rjButton1
-            // 
-            this.rjButton1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjButton1.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjButton1.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton1.BorderRadius = 0;
-            this.rjButton1.BorderSize = 0;
-            this.rjButton1.FlatAppearance.BorderSize = 0;
-            this.rjButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton1.ForeColor = System.Drawing.Color.White;
-            this.rjButton1.Location = new System.Drawing.Point(26, 101);
-            this.rjButton1.Name = "rjButton1";
-            this.rjButton1.Size = new System.Drawing.Size(150, 40);
-            this.rjButton1.TabIndex = 0;
-            this.rjButton1.Text = "Anmelden";
-            this.rjButton1.TextColor = System.Drawing.Color.White;
-            this.rjButton1.UseVisualStyleBackColor = false;
-            this.rjButton1.Click += new System.EventHandler(this.rjButton1_Click);
-            // 
-            // rjTextBox1
-            // 
-            this.rjTextBox1.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjTextBox1.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox1.BorderRadius = 0;
-            this.rjTextBox1.BorderSize = 2;
-            this.rjTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox1.Location = new System.Drawing.Point(26, 36);
-            this.rjTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox1.Multiline = false;
-            this.rjTextBox1.Name = "rjTextBox1";
-            this.rjTextBox1.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox1.PasswordChar = false;
-            this.rjTextBox1.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox1.PlaceholderText = "";
-            this.rjTextBox1.Size = new System.Drawing.Size(250, 31);
-            this.rjTextBox1.TabIndex = 1;
-            this.rjTextBox1.Texts = "";
-            this.rjTextBox1.UnderlinedStyle = false;
-            // 
-            // rjRadioButton1
-            // 
-            this.rjRadioButton1.AutoSize = true;
-            this.rjRadioButton1.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjRadioButton1.Location = new System.Drawing.Point(284, 74);
-            this.rjRadioButton1.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rjRadioButton1.Name = "rjRadioButton1";
-            this.rjRadioButton1.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rjRadioButton1.Size = new System.Drawing.Size(102, 21);
-            this.rjRadioButton1.TabIndex = 2;
-            this.rjRadioButton1.TabStop = true;
-            this.rjRadioButton1.Text = "Pin anzeigen?";
-            this.rjRadioButton1.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rjRadioButton1.UseVisualStyleBackColor = true;
-            this.rjRadioButton1.CheckedChanged += new System.EventHandler(this.rjRadioButton1_CheckedChanged);
-            // 
-            // rjTextBox2
-            // 
-            this.rjTextBox2.BackColor = System.Drawing.SystemColors.Window;
-            this.rjTextBox2.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjTextBox2.BorderFocusColor = System.Drawing.Color.HotPink;
-            this.rjTextBox2.BorderRadius = 0;
-            this.rjTextBox2.BorderSize = 2;
-            this.rjTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rjTextBox2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.rjTextBox2.Location = new System.Drawing.Point(284, 36);
-            this.rjTextBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.rjTextBox2.Multiline = false;
-            this.rjTextBox2.Name = "rjTextBox2";
-            this.rjTextBox2.Padding = new System.Windows.Forms.Padding(10, 7, 10, 7);
-            this.rjTextBox2.PasswordChar = true;
-            this.rjTextBox2.PlaceholderColor = System.Drawing.Color.DarkGray;
-            this.rjTextBox2.PlaceholderText = "";
-            this.rjTextBox2.Size = new System.Drawing.Size(105, 31);
-            this.rjTextBox2.TabIndex = 3;
-            this.rjTextBox2.Texts = "";
-            this.rjTextBox2.UnderlinedStyle = false;
             // 
             // label1
             // 
@@ -138,70 +59,98 @@ namespace Bank
             this.label2.TabIndex = 5;
             this.label2.Text = "PIN:";
             // 
-            // rjButton2
+            // textBox1
             // 
-            this.rjButton2.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjButton2.BackgroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjButton2.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.rjButton2.BorderRadius = 0;
-            this.rjButton2.BorderSize = 0;
-            this.rjButton2.FlatAppearance.BorderSize = 0;
-            this.rjButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.rjButton2.ForeColor = System.Drawing.Color.White;
-            this.rjButton2.Location = new System.Drawing.Point(269, 101);
-            this.rjButton2.Name = "rjButton2";
-            this.rjButton2.Size = new System.Drawing.Size(150, 40);
-            this.rjButton2.TabIndex = 6;
-            this.rjButton2.Text = "Neues Konto Öffnen";
-            this.rjButton2.TextColor = System.Drawing.Color.White;
-            this.rjButton2.UseVisualStyleBackColor = false;
-            this.rjButton2.Click += new System.EventHandler(this.rjButton2_Click);
+            this.textBox1.Location = new System.Drawing.Point(26, 45);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(190, 20);
+            this.textBox1.TabIndex = 6;
             // 
-            // rjRadioButton2
+            // textBox2
             // 
-            this.rjRadioButton2.AutoSize = true;
-            this.rjRadioButton2.CheckedColor = System.Drawing.Color.MediumSlateBlue;
-            this.rjRadioButton2.Location = new System.Drawing.Point(26, 74);
-            this.rjRadioButton2.MinimumSize = new System.Drawing.Size(0, 21);
-            this.rjRadioButton2.Name = "rjRadioButton2";
-            this.rjRadioButton2.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.rjRadioButton2.Size = new System.Drawing.Size(109, 21);
-            this.rjRadioButton2.TabIndex = 7;
-            this.rjRadioButton2.TabStop = true;
-            this.rjRadioButton2.Text = "Remember me?";
-            this.rjRadioButton2.UnCheckedColor = System.Drawing.Color.Gray;
-            this.rjRadioButton2.UseVisualStyleBackColor = true;
+            this.textBox2.Location = new System.Drawing.Point(284, 45);
+            this.textBox2.MaxLength = 4;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(100, 20);
+            this.textBox2.TabIndex = 7;
+            this.textBox2.UseSystemPasswordChar = true;
+            // 
+            // radioButton1
+            // 
+            this.radioButton1.AutoSize = true;
+            this.radioButton1.Location = new System.Drawing.Point(26, 71);
+            this.radioButton1.Name = "radioButton1";
+            this.radioButton1.Size = new System.Drawing.Size(93, 17);
+            this.radioButton1.TabIndex = 8;
+            this.radioButton1.TabStop = true;
+            this.radioButton1.Text = "Remember me";
+            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButton1.CheckedChanged += new System.EventHandler(this.radioButton1_CheckedChanged);
+            // 
+            // radioButton2
+            // 
+            this.radioButton2.AutoSize = true;
+            this.radioButton2.Location = new System.Drawing.Point(284, 71);
+            this.radioButton2.Name = "radioButton2";
+            this.radioButton2.Size = new System.Drawing.Size(117, 17);
+            this.radioButton2.TabIndex = 9;
+            this.radioButton2.TabStop = true;
+            this.radioButton2.Text = "Password anzeigen";
+            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButton2.CheckedChanged += new System.EventHandler(this.radioButton2_CheckedChanged);
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(26, 94);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(151, 31);
+            this.button1.TabIndex = 10;
+            this.button1.Text = "Anmelden";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(284, 94);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(100, 31);
+            this.button2.TabIndex = 11;
+            this.button2.Text = "Register";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(447, 160);
-            this.Controls.Add(this.rjRadioButton2);
-            this.Controls.Add(this.rjButton2);
+            this.ClientSize = new System.Drawing.Size(447, 132);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.radioButton2);
+            this.Controls.Add(this.radioButton1);
+            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.rjTextBox2);
-            this.Controls.Add(this.rjRadioButton1);
-            this.Controls.Add(this.rjTextBox1);
-            this.Controls.Add(this.rjButton1);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private CustomControls.RJControls.RJButton rjButton1;
-        private CustomControls.RJControls.RJTextBox rjTextBox1;
-        private CustomControls.RJControls.RJRadioButton rjRadioButton1;
-        private CustomControls.RJControls.RJTextBox rjTextBox2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private CustomControls.RJControls.RJButton rjButton2;
-        private CustomControls.RJControls.RJRadioButton rjRadioButton2;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
 

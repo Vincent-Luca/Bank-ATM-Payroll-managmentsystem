@@ -17,28 +17,44 @@ namespace Bank
         {
             InitializeComponent();
             DB = new DBconnection();
+            DB.connection();
         }
 
-        private void rjButton1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(rjTextBox1.Texts) && !String.IsNullOrEmpty(rjTextBox2.Texts))
+            if (!String.IsNullOrEmpty(textBox1.Text) && !String.IsNullOrEmpty(textBox2.Text))
             {
-                if(DB.login(rjTextBox1.Texts, DB.decrypt(rjTextBox2.Texts)))
+                if(DB.login(textBox1.Text, DB.encrypt(textBox2.Text)))
                 {
-                    maininterface m = new maininterface(DB.dateneinfügen(rjTextBox1.Texts, DB.decrypt(rjTextBox2.Texts)));
+                    maininterface m = new maininterface(DB.dateneinfügen(textBox1.Text, DB.encrypt(textBox2.Text)),DB);
+                    m.Show();
+                    this.Hide();
                 }
-                
             }
         }
 
-        private void rjButton2_Click(object sender, EventArgs e)
+
+        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox2.UseSystemPasswordChar = !textBox2.UseSystemPasswordChar;
+        }
+
+        private void radioButton1_CheckedChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void rjRadioButton1_CheckedChanged(object sender, EventArgs e)
+        private void button2_Click(object sender, EventArgs e)
         {
-            rjTextBox2.PasswordChar = !rjTextBox2.PasswordChar;
+            newacc a = new newacc(DB);
+            a.Show();
+            this.Hide();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DB.closecon();
+            Environment.Exit(0);
         }
     }
 }

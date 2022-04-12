@@ -13,10 +13,18 @@ namespace Bank
     public partial class maininterface : Form
     {
         daten daten;
-        public maininterface(daten d)
+        DBconnection DB;
+        public maininterface(daten d, DBconnection db)
         {
             InitializeComponent();
             daten = d;
+            this.DB = db;
+        }
+
+        private void maininterface_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DB.closecon();
+            Environment.Exit(0);
         }
     }
 }

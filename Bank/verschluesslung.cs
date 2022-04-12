@@ -7,7 +7,7 @@ using System.Security.Cryptography;
 
 namespace Bank
 {
-    abstract class verschluesslung
+    public abstract class verschluesslung
     {
 
         public string encrypt(string password)

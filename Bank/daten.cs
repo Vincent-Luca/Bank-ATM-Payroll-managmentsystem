@@ -11,7 +11,7 @@ namespace Bank
         public int ID { get; set; }
         public string name { get; set; }
         public string pin { get; set; }
-        public DateTime date { get; set; }
+        public string date { get; set; }
         public int total { get; set; }
         public string IBAN { get; set; }
     }
