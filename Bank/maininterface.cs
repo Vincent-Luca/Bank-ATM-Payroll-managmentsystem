@@ -40,8 +40,12 @@ namespace Bank
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //List<string> coloums = new List<string>();
-            //string[,] daten = DB.selectquery(,"Accounts");
+            dataGridView1.Rows.Clear();
+            string[,] data = DB.gettransactions(daten.ID.ToString());
+            for (int i = 0; i < data.GetLength(0); i+=2)
+            {
+                dataGridView1.Rows.Add(data[i,0], data[i, 1], data[i, 2], data[i, 3], data[i, 4]);
+            }
         }
     }
 }
