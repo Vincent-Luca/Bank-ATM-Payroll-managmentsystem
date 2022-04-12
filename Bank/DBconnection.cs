@@ -47,7 +47,7 @@ namespace Bank
         {
             string iban;
             iban = "ECU" + encrypt(name) + encrypt(pin); // i know its not safe but this is just a test to see if it works good like this
-            cmd.CommandText = "Insert into Accounts(Namen,Pin,Erstelldatum,Total,IBAN) Values ('" + name + "','" + encrypt(pin) + "','" + DateTime.Now.Date.ToString() + "'," + 0.ToString() + ",'" + iban + "');";
+            cmd.CommandText = "Insert into Accounts(Namen,Pin,Erstelldatum,Total,IBAN) Values ('" + name + "','" + encrypt(pin) + "','" + DateTime.Now.Date.ToString() + "'," + 500.ToString() + ",'" + iban + "');";
             cmd.ExecuteNonQuery();
             return dateneinfügen(name, pin);
         }
@@ -66,7 +66,7 @@ namespace Bank
                     d.name = name;
                     d.pin = decrypt(pin);
                     d.date = reader.GetString(3);
-                    d.total = Convert.ToInt32(reader.GetOrdinal("Total"));
+                    d.total = Convert.ToInt32(reader.GetValue(reader.GetOrdinal("Total")));
                     d.IBAN = reader.GetString(5);
                 }
             }
@@ -82,30 +82,26 @@ namespace Bank
 
         public string[,] selectquery(List<string> colums, string table)
         {
-            string[,] result = new string[colums.Count, getrows()];
-
-
-
-
-            OleDbDataReader reader = cmd.ExecuteReader();
-            for (int i = 0; i < colums.Count; i++)
-            {
-                result[i, 0] = colums[i];
-            }
-            string query = "select "+colums[1];
+            string query = "select " + colums[1];
             for (int i = 1; i < colums.Count; i++)
             {
                 query = query + "," + colums[i];
             }
-            query += "from "+table;
+            query += "from " + table;
             cmd.CommandText = query;
-            
-            
-            while (reader.Read())
+            string[,] result = new string[colums.Count, getrows()];
+
+            for (int i = 0; i < colums.Count; i++)
             {
-                
+                cmd.CommandText ="Select "+colums[i]+" from "+table+";";
+                OleDbDataReader reader = cmd.ExecuteReader();
+                int k = 1;
+                while (reader.Read())
+                {
+                    result[i, k] = reader.GetValue(reader.GetOrdinal(colums[i])).ToString();
+                    k++;
+                }
             }
-            reader.Close();
             return result;
         }
 
@@ -113,12 +109,21 @@ namespace Bank
         {
             int thing = 0;
             OleDbDataReader reader = cmd.ExecuteReader();
-            while (reader.Read())
-            {
-                thing++;
-            }
+            thing = reader.Depth;
             reader.Close();
             return thing+1;
+        }
+
+
+        public string[,] gettransactions(string id)
+        {
+            cmd.CommandText = "Select  DISTINCT * from Accounts, Transactions WHERE FromID = "+id+" or  ToID = "+id+";";
+
+            OleDbDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+
+            }
         }
     }
 }
