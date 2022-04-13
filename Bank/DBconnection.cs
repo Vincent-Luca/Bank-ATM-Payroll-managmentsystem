@@ -120,10 +120,12 @@ namespace Bank
 
         public string[,] gettransactions(string id)
         {
-            cmd.CommandText = "SELECT DISTINCT FromID,ToID,Namen,amount,IBAN FROM Accounts, Transactions WHERE FromID = "+id+" or ToID = "+id+";";
-            string[,] result = new string[4,getrows()];
+            cmd.CommandText = "SELECT COUNT(*) FROM Accounts, Transactions WHERE FromID = "+id+" or ToID = "+id+";";
+            string[,] result = new string[5, (int)cmd.ExecuteScalar()];
+            cmd.CommandText = "SELECT DISTINCT FromID,ToID,Namen,amount,IBAN FROM Accounts, Transactions WHERE FromID = " + id + " or ToID = " + id + ";";
             OleDbDataReader reader = cmd.ExecuteReader();
             int i = 0;
+            
             while (reader.Read())
             {
                 result[0, i] = reader.GetValue(0).ToString();

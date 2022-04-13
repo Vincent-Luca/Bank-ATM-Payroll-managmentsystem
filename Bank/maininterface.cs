@@ -40,11 +40,12 @@ namespace Bank
 
         private void button1_Click(object sender, EventArgs e)
         {
+            dataGridView1.Visible = true;
             dataGridView1.Rows.Clear();
             string[,] data = DB.gettransactions(daten.ID.ToString());
-            for (int i = 0; i < data.GetLength(0); i+=2)
+            for (int i = 0; i < data.GetLength(1); i+=2)
             {
-                dataGridView1.Rows.Add(data[i,0], data[i, 1], data[i, 2], data[i, 3], data[i, 4]);
+                dataGridView1.Rows.Add(data[0,i], data[1,i], data[2,i], data[3,i], data[4,i]);
             }
         }
     }
