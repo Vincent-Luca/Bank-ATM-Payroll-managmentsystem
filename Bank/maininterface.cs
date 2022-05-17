@@ -43,9 +43,12 @@ namespace Bank
             dataGridView1.Visible = true;
             dataGridView1.Rows.Clear();
             string[,] data = DB.gettransactions(daten.ID.ToString());
+            
+            
+            
             for (int i = 0; i < data.GetLength(1); i+=2)
             {
-                dataGridView1.Rows.Add(data[0,i], data[1,i], data[2,i], data[3,i], data[4,i]);
+                dataGridView1.Rows.Add(data[0,i],data[0,i+1],data[1,i], data[1, i+1], data[2, i]+"€");
             }
         }
     }
